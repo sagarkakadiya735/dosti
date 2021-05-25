@@ -1,0 +1,43 @@
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .card {
+    display: inline-block;
+    border: 0px;
+  }
+}
+.header-color{
+     --background: #3FD5A5;
+}
+.set-noti{
+  position: absolute;
+  background: red;
+  padding: 2px 4px 2px 4px;
+   border-radius: 50%;
+}
+
+.notification {
+  // background-color: #555;
+  // color: white;
+  // text-decoration: none;
+  // padding: 15px 26px;
+  position: relative;
+  // display: inline-block;
+  // border-radius: 2px;
+}
+
+// .notification:hover {
+//   background: red;
+// }
+
+.notification .badge {
+  position: absolute;
+  top: 3px;
+  right: -10px;
+  padding: 4px 8px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}

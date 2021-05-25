@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar class="ion-no-padding header-color">
+    <div class="my-2 text-center">
+      <!-- <span  [routerLink]="'/embroiderylist/'+localid"><img src="../../assets/caret-left-light.png" width="30px" alt=""></span> -->
+      <span class="text-white h4">
+        productdetails
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<style>
+  :host ::ng-deep.swiper-pagination-bullet{
+  --bullet-background: white ;
+  opacity: 1;
+}
+
+:host ::ng-deep.swiper-pagination-bullet-active{
+  --bullet-background-active:#3FD5A5 !important;
+}
+</style>
+<ion-content>
+  <div class="containers">
+    <div class="first pt-3">
+      <!-- <img src="../../assets/2.jpg" width="100%" height="100%"> -->
+      <ion-slides pager="true" [options]="slideOptsOne" class="h-100">
+        <ion-slide *ngFor="let card of productlist" class="w-100 h-100">
+          <img src={{card.img}} class="slider-img h-100">
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="seccond ">
+
+    </div>
+    <div class="third">
+      <div class="container">
+        <table class="table">
+          <tbody>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Company Name</td>
+              <td>:</td>
+              <td>Otto</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Price</td>
+              <td>:</td>
+              <td>2,00,000</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Head</td>
+              <td>:</td>
+              <td>15</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Types</td>
+              <td>:</td>
+              <td>Malti</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Area</td>
+              <td>:</td>
+              <td>400</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Beam</td>
+              <td>:</td>
+              <td>400*400</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Pantograph</td>
+              <td>:</td>
+              <td>1300</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Motors</td>
+              <td>:</td>
+              <td>Single Servo</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Needle</td>
+              <td>:</td>
+              <td>16</td>
+            </tr>
+            <tr class="border border-left-0 border-right-0">
+              <td class="font-weight-bold">Other Deatils</td>
+              <td>:</td>
+              <td>the Bird</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button type="button" class="btn my-3 bg-green text-white w-100" (click)="presentAlert()">Owner Contact</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

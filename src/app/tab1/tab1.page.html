@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-item class="ion-no-padding header-color">
+    <!-- <ion-avatar slot="end"> -->
+      <a href="#" slot="end" class="notification">
+        <ion-icon  [routerLink]="'/favorite'" class="h1 text-white my-2" name="heart-outline">
+        </ion-icon>
+        <span class="badge">3</span>
+      </a>
+    <!-- </ion-avatar> -->
+    <ion-avatar slot="end">
+      <img src="../../assets/image 3.png">
+    </ion-avatar>
+    <ion-label class="pl-3">
+      <h3><span class="text-white"> Hello,</span><span class="text-blue"> Sagar</span></h3>
+      <p class="text-white">Have a Good Day</p>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-toolbar class="search-toolbar">
+    <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  </ion-toolbar> -->
+  <div class="h5 pl-3 pt-2 mb-0">List of categor</div>
+  <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" style="height: 140px;">
+    <ion-slide *ngFor="let card of productlist" style="width: 100px; height: 100px;" (click)="ProductId(card.id)">
+      <ion-avatar style="width: 95px; height: 95px;">
+        <img src={{card.img}} class="home-slider-img">
+        <div class="font-home-silder">{{card.name}}</div>
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
+  <div class="h5 pl-3 pt-0">New categor</div>
+  <ion-card *ngFor="let card of product" class="border-r " [routerLink]="'/productdetails/'+card.id">
+    <img src={{card.img}} height="140px" width="100%" />
+    <div class="text-card-title text-dark font-weight-bold pt-2 pl-3 mb-0">
+      Sky model Avtar
+    </div>
+    <div class="card-title-price color-green pl-3 mb-0 ">Rs 1,00,000</div>
+    <ion-list>
+      <ion-item lines="none">
+        <!-- <p slot='end' class="color-grew">3 Years</p> -->
+        <ion-icon slot="end" class="color-green mt-0 heart-font" *ngIf="condition" (click)="heart($event)" name="heart-outline">
+        </ion-icon>
+        <ion-icon slot="end" class="color-green mt-0 heart-font" *ngIf="!condition" (click)="heart($event)" name="heart">
+        </ion-icon>
+        <ion-item class="ion-no-padding" lines="none">
+          <!-- <ion-avatar slot="start">
+            <img src="../../assets/2.jpg">
+          </ion-avatar> -->
+          <ion-label class="mt-0">
+            <!-- <h3>24 Head</h3> -->
+            <h3>Cording + Sequin</h3>
+            <p>
+              <ion-icon name="location-outline" class="location"></ion-icon>Surat,Gujrat
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

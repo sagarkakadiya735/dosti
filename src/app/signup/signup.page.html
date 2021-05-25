@@ -1,0 +1,31 @@
+<ion-header>
+  <div  class="my-2 text-center">
+<!-- <span [routerLink]="'/'"><img src="../../assets/caret-left-light.png" width="30px" alt=""></span> -->
+<span class="color-green h4">
+  Register
+</span>
+</div>
+</ion-header>
+
+<ion-content>
+<div class="container">
+  <div class="first ion-text-center pt-3">
+    <span class="header-number">1</span><span class="header-number-b">2</span>
+  </div>
+  <div class="seccond ion-text-center">
+    <img src="../../assets/icon.png" height="100px">
+  </div>
+  <div class="third">
+    <label>Name:</label>
+    <input type="text" class="w-100 input-text" placeholder="Enter your name">
+    <label>Email Id:</label>
+    <input type="text" class="w-100 input-text" placeholder="Enter your email">
+    <label>Mobile:</label>
+    <input type="number" class="w-100 input-text" placeholder="Enter your mobile number">
+    <input type="checkbox" value="Car" class="my-3"> <span class="color-green"> Term & Condition</span>
+  </div>
+  <div class="four m-2">
+    <button type="button" [routerLink]="'/login'" class="btn my-3 bg-green text-white w-100">Register</button>
+  </div>
+</div>
+</ion-content>

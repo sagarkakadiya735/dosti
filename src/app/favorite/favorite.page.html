@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar class="ion-no-padding header-color">
+    <div class="my-2 text-center">
+      <!-- <span  [routerLink]="'/tab1'"><img src="../../assets/caret-left-light.png" width="30px"
+          alt=""></span> -->
+      <span class="text-white h4">
+        favorite
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="row mx-0">
+  <div class="col-6 px-0" *ngFor="let card of productlist">
+    <ion-card class="border-r m-2" (click)="setId()" [routerLink]="'/productdetails/'+card.id">
+      <img src={{card.img}} height="140px" width="100%" />
+      <div class="set-heart-on-coner">
+        <ion-icon slot="end" class="color-green mt-0 heart-shaw shadow-lg" *ngIf="condition" (click)="heart($event)"
+          name="heart-outline">
+        </ion-icon>
+        <ion-icon slot="end" class="color-green mt-0 heart-shaw shadow-lg" *ngIf="!condition" (click)="heart($event)"
+          name="heart">
+        </ion-icon>
+      </div>
+      <div class="text-card-title text-dark font-weight-bold pt-2 pl-3 mb-0">
+        Sky model
+      </div>
+      <div class="card-title-price color-green pl-3 mb-0 ">Rs 1,00,000</div>
+      <p class="pl-3 mb-1">Cording + Sequin</p>
+      <p class="pl-3 mb-1">
+        <ion-icon name="location-outline"></ion-icon> Surat,Gujrat
+      </p>
+    </ion-card>
+  </div>
+</div>
+</ion-content>

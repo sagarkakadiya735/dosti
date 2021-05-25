@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="ion-no-padding header-color">
+    <div class="my-2 text-center">
+      <!-- <span [routerLink]="'/tab1'"><img src="../../assets/caret-left-light.png" width="30px" alt=""></span> -->
+      <span class="text-white h4">
+        embroidery
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container my-3">
+    <h3><span class="color-green font-weight-bold"> 125</span> Area Machine</h3>
+    <ion-card class="border-r m-0" [routerLink]="'/embroiderylist/1'" (click)="embroiderylist(125,1)">
+      <img src="../../assets/01.jpg" height="140px" width="100%" />
+    </ion-card>
+    <h3><span class="color-green font-weight-bold"> 200</span> Area Machine</h3>
+    <ion-card class="border-r m-0" [routerLink]="'/embroiderylist/1'" (click)="embroiderylist(200,1)">
+      <img src="../../assets/03.jpg" height="140px" width="100%" />
+    </ion-card>
+    <h3><span class="color-green font-weight-bold"> 250</span> Area Machine</h3>
+    <ion-card class="border-r m-0" [routerLink]="'/embroiderylist/1'" (click)="embroiderylist(250,1)">
+      <img src="../../assets/04.jpg" height="140px" width="100%" />
+    </ion-card>
+    <h3><span class="color-green font-weight-bold"> 300</span> Area Machine</h3>
+    <ion-card class="border-r m-0" [routerLink]="'/embroiderylist/1'" (click)="embroiderylist(300,1)">
+      <img src="../../assets/05.jpg" height="140px" width="100%" />
+    </ion-card>
+    <h3><span class="color-green font-weight-bold"> 400</span> Area Machine</h3>
+    <ion-card class="border-r m-0" [routerLink]="'/embroiderylist/1'" (click)="embroiderylist(400,1)">
+      <img src="../../assets/06.jpg" height="140px" width="100%" />
+    </ion-card>
+    <h3><span class="color-green font-weight-bold"> Other</span> Area Machine</h3>
+    <ion-card class="border-r m-0" [routerLink]="'/embroiderylist/1'" (click)="embroiderylist('other',1)">
+      <img src="../../assets/07.jpg" height="140px" width="100%" />
+    </ion-card>
+  </div>
+</ion-content>

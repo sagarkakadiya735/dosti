@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="ion-no-padding header-color">
+    <div class="my-2 text-center h5 text-white">
+     Profile
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="">
+    <ion-card class="border-r mt-3">
+        <ion-item >
+          <ion-avatar slot="start" class="set-icon-size">
+            <img src="../../assets/icon.png" width="100px" height="100px">
+          </ion-avatar>
+          <ion-label class="pl-3">
+            <p class="font-weight-bold font-profile-name mb-2 ">Sagar kakadiya</p>
+            <p class="text-muted font-weight-bold">9913087513</p>
+          </ion-label>
+          <ion-icon slot="end" class="text-danger h2 m-0" (click)="Logout($event)"
+            name="log-in-outline"></ion-icon>
+        </ion-item>
+    </ion-card>
+
+    <ion-card *ngFor="let card of product" [routerLink]="'/productdetails/'+card.id" class="border-r my-3">
+      <img src="../../assets/2.jpg" height="140px" width="100%" />
+      <div class="text-card-title text-dark font-weight-bold pt-2 pl-3 mb-0">
+        Sky model Avtar
+      </div>
+      <div class="card-title-price color-green pl-3 mb-0 ">Rs 1,00,000</div>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-icon slot="end" class="text-danger mt-0 icon-profile-font heart-shaw" (click)="Delete($event)" name="trash-outline"></ion-icon>
+          <ion-icon slot="end" class="color-green mt-0 icon-profile-font heart-shaw" (click)="Edit($event,card.id)" name="pencil-outline"></ion-icon>
+          <ion-item class="ion-no-padding" lines="none">
+            <ion-label class="mt-0">
+              <h3>Cording + Sequin</h3>
+              <p class="my-auto">
+                <ion-icon name="location-outline" class="location"></ion-icon>Surat,Gujrat
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+
+    <!-- head for loop -->
+    <div class="row mx-0">
+      <div class="col-6 px-0" *ngFor="let card of product">
+    <ion-card  class="border-r my-3" [routerLink]="'/productdetails/'+card.id">
+      <img src="../../assets/head02.jpg" class="slider-img " height="140px" />
+      <div class="set-heart-on-coner">
+        <ion-icon slot="end" class="text-danger mt-0 icon-profile-font heart-shaw" (click)="Delete($event)" name="trash-outline"></ion-icon>
+        <ion-icon slot="end" class="color-green mt-0 ml-3 icon-profile-font heart-shaw" (click)="Edit($event,card.id)" name="pencil-outline"></ion-icon>
+      </div>
+      <div class="text-card-title text-dark font-weight-bold pt-2 pl-3 mb-0">
+        Sky model
+      </div>
+      <div class="card-title-price color-green pl-3 mb-0 ">Rs 1,00,000</div>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-item class="ion-no-padding" lines="none">
+            <ion-label class="mt-0">
+              <h3>Cording + Sequin</h3>
+              <p class="my-auto">
+                <ion-icon name="location-outline" class="location"></ion-icon>Surat,Gujrat
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    </div>
+    </div>
+  </div>
+</ion-content>

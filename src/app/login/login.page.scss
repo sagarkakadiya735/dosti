@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+//   background-image: url(../../assets/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // position: absolute;
+}
+.first{
+  height: 20%;
+}
+.seccond{
+    height: 30%;
+}
+.third{
+  height: 30%;
+}
+.four{
+  height: 20%;
+}
+.box {
+        border-color: #403E39;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 3px;
+    }
+.header-color{
+     --background: #3FD5A5;
+}

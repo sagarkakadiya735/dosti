@@ -1,0 +1,35 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>skip</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding>
+  <div class="container">
+    <div class="first"></div>
+    <div class="seccond ion-text-center">
+      <img src="../../assets/icon.png" height="100px">
+    </div>
+    <div class="third"></div>
+    <div class="four">
+      <div class="bg-white-shawdo">
+        <!-- <ion-button class="my-3" expand="full" color="secondary">Login</ion-button>
+        <ion-button class="my-3" expand="full" color="secondary">Register</ion-button> -->
+        <button type="button" [routerLink]="'/login'" class="btn my-3 bg-green text-white w-100">Login</button>
+        <button type="button" [routerLink]="'/signup'" class="btn my-3 bg-green text-white w-100">Register</button>
+        <!-- <ion-item [routerLink]="'home/tabs/tab1'" routerDirection="forward">hello</ion-item> -->
+      </div>
+    </div>
+    <!-- <ion-footer class="ion-no-border">
+      <ion-toolbar>
+        <ion-title class="ion-text-end">
+          <p>Skip > > ></p>
+        </ion-title>
+      </ion-toolbar>
+    </ion-footer> -->
+    <div [routerLink]="'/tab1/tab1'" class="focus-remove ion-text-end fix-bottom text-white mb-3 mr-3 h5">
+      skip >>>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,26 @@
+.first{
+  height: 40%;
+}
+.seccond{
+    height: 10%;
+}
+.third{
+  height: 50%;
+}
+.containers {
+  height: 100%;
+}
+.slider-img{
+  border-radius: 8px;
+   width: 95%;
+   object-fit: fill;
+}
+.header-color{
+     --background: #3FD5A5;
+}
+.share-modal .modal-wrapper {
+  --height: 20%;
+  position: absolute; 
+  top: 80%;
+  display: block;
+}

@@ -1,0 +1,37 @@
+<ion-header>
+  <div class="my-2 text-center">
+    <!-- <span [routerLink]="'/login'"><img src="../../assets/caret-left-light.png" width="30px" alt=""></span> -->
+    <span class="color-green h4">
+      Login
+    </span>
+  </div>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+      <div class="first ion-text-center pt-3">
+        <span class="header-number-b">1</span><span class="header-number">2</span>
+      </div>
+      <div class="seccond ion-text-center">
+        <img src="../../assets/icon.png" height="100px">
+      </div>
+      <div class="third text-center">
+      <ion-row text-center>
+        <ion-col>
+          <ion-input #otp1 class="ion-inputs" required maxLength="1" (keyup)="otpController($event,otp2,'')">
+          </ion-input>
+          <ion-input #otp2 class="ion-inputs" required maxLength="1" (keyup)="otpController($event,otp3,otp1)">
+          </ion-input>
+          <ion-input #otp3 class="ion-inputs" required maxLength="1" (keyup)="otpController($event,otp4,otp2)">
+          </ion-input>
+          <ion-input #otp4 class="ion-inputs" required maxLength="1" (keyup)="otpController($event,'',otp3)">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      </div>
+      <div class="four">
+        <button type="button" [routerLink]="'/tab1/tab1'" class="btn my-3 bg-green text-white w-100">OTP</button>
+      </div>
+    </div>
+
+</ion-content>

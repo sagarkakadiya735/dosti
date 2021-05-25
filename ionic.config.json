@@ -1,0 +1,7 @@
+{
+  "name": "ieltsexam",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

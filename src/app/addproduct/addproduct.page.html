@@ -1,0 +1,405 @@
+<ion-header>
+  <ion-toolbar class="ion-no-padding header-color ">
+    <div class="my-2 text-center">
+      <!-- <span [routerLink]="'/tab2'"><img src="../../assets/caret-left-light.png" width="30px" alt=""></span> -->
+      <span class="text-white h4">
+        Add Product
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container my-3">
+    <div class="row">
+      <div class="col-4 p-2" style="position: relative;width: 100px;">
+        <img *ngIf="image1==''" src="../../assets/addimage.png" class="set-icon-img" (click)="seletimage1()">
+        <img *ngIf="image1!=''" [src]="'data:image/jpeg;base64,'+guestPicture1" class="set-icon-img">
+        <img src="../../assets/x.png" *ngIf="image1!=''" (click)="Removeimage1()" class="close-se">
+      </div>
+      <div class="col-4 p-2" style="position: relative;width: 100px;">
+        <img *ngIf="image2==''" src="../../assets/addimage.png" class="set-icon-img" (click)="seletimage2()">
+        <img *ngIf="image2!=''" [src]="'data:image/jpeg;base64,'+guestPicture2" class="set-icon-img">
+        <img src="../../assets/x.png" *ngIf="image2!=''" (click)="Removeimage2()" class="close-se">
+      </div>
+      <div class="col-4 p-2" style="position: relative;width: 100px;">
+        <img *ngIf="image3==''" src="../../assets/addimage.png" class="set-icon-img" (click)="seletimage3()">
+        <img *ngIf="image3!=''" [src]="'data:image/jpeg;base64,'+guestPicture3" class="set-icon-img">
+        <img src="../../assets/x.png" *ngIf="image3!=''" (click)="Removeimage3()" class="close-se">
+      </div>
+      <div class="col-4 p-2" style="position: relative;width: 100px;">
+        <img *ngIf="image4==''" src="../../assets/addimage.png" class="set-icon-img" (click)="seletimage4()">
+        <img *ngIf="image4!=''" [src]="'data:image/jpeg;base64,'+guestPicture4" class="set-icon-img">
+        <img src="../../assets/x.png" *ngIf="image4!=''" (click)="Removeimage4()" class="close-se">
+      </div>
+      <div class="col-4 p-2" style="position: relative;width: 100px;">
+        <img *ngIf="image5==''" src="../../assets/addimage.png" class="set-icon-img" (click)="seletimage5()">
+        <img *ngIf="image5!=''" [src]="'data:image/jpeg;base64,'+guestPicture5" class="set-icon-img">
+        <img src="../../assets/x.png" *ngIf="image5!=''" (click)="Removeimage5()" class="close-se">
+      </div>
+    </div>
+    <div *ngIf="id==='1'">
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter price">
+      
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Company (Brand):</ion-label>
+        <ion-select [(ngModel)]="embro_brand" class="custom-options">
+          <ion-select-option value="Liberty">Liberty</ion-select-option>
+          <ion-select-option value="KTL">KTL</ion-select-option>
+          <ion-select-option value="Alliance">Alliance</ion-select-option>
+          <ion-select-option value="Yuemei">Yuemei</ion-select-option>
+          <ion-select-option value="Om Satya">Om Satya</ion-select-option>
+          <ion-select-option value="Pallu">Pallu</ion-select-option>
+          <ion-select-option value="Unix">Unix</ion-select-option>
+          <ion-select-option value="Tang">Tang</ion-select-option>
+          <ion-select-option value="Swf">Swf</ion-select-option>
+          <ion-select-option value="Saistar">Saistar</ion-select-option>
+          <ion-select-option value="Tajima">Tajima</ion-select-option>
+          <ion-select-option value="Sky">Sky</ion-select-option>
+          <ion-select-option value="Golden Falcen">Golden Falcen</ion-select-option>
+          <ion-select-option value="Galaxy">Galaxy</ion-select-option>
+          <ion-select-option value="Signature">Signature</ion-select-option>
+          <ion-select-option value="Zenix">Zenix</ion-select-option>
+          <ion-select-option value="ZHK">ZHK</ion-select-option>
+          <ion-select-option value="other">other</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="embro_brand==='other'">
+        <label>Other-Brand:</label>
+        <input type="number" class="w-100 input-text" placeholder="Enter Area">
+      </div>
+
+      <label>Head:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter head number">
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Area:</ion-label>
+        <ion-select [(ngModel)]="embro_area" class="custom-options">
+          <ion-select-option value="400">400</ion-select-option>
+          <ion-select-option value="250">250</ion-select-option>
+          <ion-select-option value="300">300</ion-select-option>
+          <ion-select-option value="200">200</ion-select-option>
+          <ion-select-option value="125">125</ion-select-option>
+          <ion-select-option value="other">other</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="embro_area==='other'">
+        <label>Other-Area:</label>
+        <input type="number" class="w-100 input-text" placeholder="Enter Area">
+      </div>
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Types:</ion-label>
+        <ion-select [(ngModel)]="embro_Types" class="custom-options">
+          <ion-select-option value="Malti">Malti</ion-select-option>
+          <ion-select-option value="Cording">Cording</ion-select-option>
+          <ion-select-option value="Twin Sequin">Twin Sequin</ion-select-option>
+          <ion-select-option value="Four Sequin">Four Sequin</ion-select-option>
+          <ion-select-option value="Chain Stitch">Chain Stitch</ion-select-option>
+          <ion-select-option value="Cording+Sequin">Cording+Sequin</ion-select-option>
+          <ion-select-option value="Sequin+Seqin">Sequin+Seqin</ion-select-option>
+          <ion-select-option value="cording+twins Sequin">cording+twins Sequin</ion-select-option>
+          <ion-select-option value="other">other</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="embro_Types==='other'">
+        <label>Other-Types:</label>
+        <input type="text" class="w-100 input-text" placeholder="Enter Types">
+      </div>
+
+     
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Beam:</ion-label>
+        <ion-select [(ngModel)]="embro_Beam" class="custom-options">
+          <ion-select-option value="250*250">250*250</ion-select-option>
+          <ion-select-option value="300*250">300*250</ion-select-option>
+          <ion-select-option value="300*300">300*300</ion-select-option>
+          <ion-select-option value="300*400">300*400</ion-select-option>
+          <ion-select-option value="400*400">400*400</ion-select-option>
+          <ion-select-option value="400*500">400*500</ion-select-option>
+          <ion-select-option value="500*500">500*500</ion-select-option>
+          <ion-select-option value="600*40">600*400</ion-select-option>
+          <ion-select-option value="other">other</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="embro_Beam==='other'">
+        <label>Other-Beam:</label>
+        <input type="number" class="w-100 input-text" placeholder="Enter Beam">
+      </div>
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Pantograph:</ion-label>
+        <ion-select [(ngModel)]="embro_Pantograph" class="custom-options">
+          <ion-select-option value="1200">1200</ion-select-option>
+          <ion-select-option value="1250">1250</ion-select-option>
+          <ion-select-option value="1300">1300</ion-select-option>
+          <ion-select-option value="1300up">1300up</ion-select-option>
+          <ion-select-option value="other">other</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="embro_Pantograph==='other'">
+        <label>Other-Pantograph:</label>
+        <input type="text" class="w-100 input-text" placeholder="Enter Pantograph">
+      </div>
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Motors:</ion-label>
+        <ion-select [(ngModel)]="embro_Motors" class="custom-options">
+          <ion-select-option value="Single Servo">Single Servo</ion-select-option>
+          <ion-select-option value="Tripal Servo">Tripal Servo</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>needle:</ion-label>
+        <ion-select [(ngModel)]="embro_needle" class="custom-options">
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="9">9</ion-select-option>
+          <ion-select-option value="12">12</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit1()">submit</button>
+      </div>
+    </div>
+
+    <!-- second Sequin Head-->
+    <div *ngIf="id==='2'">
+
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Side:</ion-label>
+        <ion-select [(ngModel)]="sequin_head_Side" class="custom-options">
+          <ion-select-option value="1 Number Needle">1 Number Needle</ion-select-option>
+          <ion-select-option value="6 Number Needle">6 Number Needle</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Brand:</ion-label>
+        <ion-select [(ngModel)]="sequin_head_Brand" class="custom-options">
+          <ion-select-option value="Korean">Korean</ion-select-option>
+          <ion-select-option value="Champion">Champion</ion-select-option>
+          <ion-select-option value="Jiaya">Jiaya</ion-select-option>
+          <ion-select-option value="Nero">Nero</ion-select-option>
+          <ion-select-option value="Alliance">Alliance</ion-select-option>
+          <ion-select-option value="Dolphin">Dolphin</ion-select-option>
+          <ion-select-option value="other">other</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="sequin_head_Brand==='other'">
+        <label>Other-Brand:</label>
+        <input type="text" class="w-100 input-text" placeholder="Enter Brand">
+      </div>
+
+      <label>Pies:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Pies">
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Sequin card:</ion-label>
+        <ion-select [(ngModel)]="sequin_head_Sequin_card" class="custom-options">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit2()">submit</button>
+      </div>
+    </div>
+
+    <!--third Cording Head  -->
+    <div *ngIf="id==='3'">
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Side:</ion-label>
+        <ion-select [(ngModel)]="Cording_head_Side" class="custom-options">
+          <ion-select-option value="1 Number Needle">1 Number Needle</ion-select-option>
+          <ion-select-option value="6 Number Needle">6 Number Needle</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <label>Pies:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Pies">
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Sequin card:</ion-label>
+        <ion-select [(ngModel)]="cording_head_Cording_card" class="custom-options">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit3()">submit</button>
+      </div>
+
+    </div>
+
+    <!-- hot Fix Machine -->
+    <div *ngIf="id==='4'">
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <label>Size:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Size">
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit4()">submit</button>
+      </div>
+    </div>
+
+    <!-- Digital Printing Machine -->
+    <div *ngIf="id==='5'">
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <label>Brand:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Brand">
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit4()">submit</button>
+      </div>
+    </div>
+
+    <!-- Air Compressor -->
+    <div *ngIf="id==='6'">
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <label>Brand:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Brand">
+
+      <label>Hp:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Hp">
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Motor:</ion-label>
+        <ion-select [(ngModel)]="Air_compressor_motor" class="custom-options">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit6()">submit</button>
+      </div>
+    </div>
+
+    <!-- Moti Machine -->
+    <div *ngIf="id==='7'">
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <label>Brand:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Brand">
+
+      <ion-item class="select-border my-2" lines="none">
+        <ion-label>Motor:</ion-label>
+        <ion-select [(ngModel)]="Moti_Machine_Air_compressor" class="custom-options">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit7()">submit</button>
+      </div>
+    </div>
+
+    <!-- Single Head Sewing Machine -->
+    <div *ngIf="id==='8'">
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <label>Brand:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Brand">
+
+      <label>Pies:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Pies">
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit8()">submit</button>
+      </div>
+
+    </div>
+
+    <!-- Spere Parts -->
+    <div *ngIf="id==='9'">
+
+      <label>Name:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Name">
+
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <label>Brand:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Brand">
+
+      <label>Pies:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Pies">
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit9()">submit</button>
+      </div>
+    </div>
+
+    <!-- All Materials -->
+    <div *ngIf="id==='10'">
+      <label>Name:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Name">
+
+      <label>Price:</label>
+      <input type="number" class="w-100 input-text" placeholder="Enter Price">
+
+      <label>Brand:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Brand">
+
+      <label>Pies:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter Pies">
+
+      <label>Other Details:</label>
+      <input type="text" class="w-100 input-text" placeholder="Enter other deatils">
+
+      <div class="ion-text-center my-2">
+        <button class="btn w-75 bg-green" (click)="submit10()">submit</button>
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>
